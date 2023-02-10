@@ -5,4 +5,10 @@ def dim(){
     print "x=${x}"
 
     print y
+
+    if (abc == "dimpuldimmi") {
+
+        print "YES"
+
+    }
 }
