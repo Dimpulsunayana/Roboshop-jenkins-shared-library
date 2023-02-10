@@ -1,4 +1,4 @@
-def ci(){
+def call(){
     pipeline {
         agent {
             label 'dimpul'
