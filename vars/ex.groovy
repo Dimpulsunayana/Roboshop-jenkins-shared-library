@@ -24,6 +24,6 @@ def dim(){
 
     def fruits=["apple","banana","orange"]
     for(k in fruits){
-        println(k)
+        println(k[1])
     }
     }
