@@ -1,14 +1,18 @@
 def call(){
     pipeline {
-        agent {
-            label 'dimpul'
-        }
+        agent any
+//                {
+//            label 'dimpul'
+//        }
 
         stages{
 
             stage('compile/Build'){
                 steps{
-                    echo 'Hello Dimpuldimmi'
+                    script{
+                    common.compile()
+                    }
+
                 }
             }
 
