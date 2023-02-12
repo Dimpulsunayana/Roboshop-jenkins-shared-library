@@ -6,9 +6,12 @@ def dim(){
 
     print y
 
-    if (abc == "dimpuldimmi") {
+    if (abc == "dimpul") {
 
         print "YES"
+    } else{
+
+        print "NO"
 
     }
 }
