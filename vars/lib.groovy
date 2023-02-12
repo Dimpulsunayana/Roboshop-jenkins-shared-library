@@ -1,9 +1,8 @@
 def call(){
     pipeline {
-        agent any
-//                {
-//            label 'dimpul'
-//        }
+        agent {
+            label 'dimpul'
+        }
 
         stages{
 
