@@ -14,4 +14,16 @@ def dim(){
         print "NO"
 
     }
-}
+
+    def i=2
+    def j= 0
+    while (i>j){
+        println "${j}"
+        j++
+    }
+
+    def fruits=["apple","banana","orange"]
+    for(k in fruits){
+        println(k)
+    }
+    }
