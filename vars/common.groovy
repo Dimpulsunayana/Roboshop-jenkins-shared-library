@@ -7,3 +7,13 @@ def compile(){
         sh 'mvn --version'
     }
 }
+
+def unittests(){
+    if (app_lang== "nodejs"){
+        sh 'npm test'
+    }
+
+    if (app_lang== "maven"){
+        sh 'mvn --version'
+    }
+}
