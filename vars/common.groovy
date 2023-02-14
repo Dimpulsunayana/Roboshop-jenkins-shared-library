@@ -17,6 +17,6 @@ def unittests(){
     }
 
     if (app_lang== "maven"){
-        sh 'mvn --version'
+        sh 'mvn test'
     }
 }
