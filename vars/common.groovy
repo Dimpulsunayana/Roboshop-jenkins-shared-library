@@ -10,6 +10,8 @@ def compile(){
 
 def unittests(){
     if (app_lang== "nodejs"){
+        //Developer is missing to add test cases in our project,We can ignore for now but it is
+        //best practice to use
        // sh 'npm test'
         sh 'echo test cases'
     }
