@@ -16,12 +16,8 @@ def unittests(){
         //os basics-- "command1 || command2" if command1 fails then run command2
         // "command1 && command2" if command1 success then run command2
         //"true" means it always success in os
-        try {
             sh 'npm test'
-        }
-        catch (Exception e){
-            email("unit tests failed")
-        }
+
     }
 
     if (app_lang== "maven"){
