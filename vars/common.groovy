@@ -21,6 +21,6 @@ def unittests(){
     }
 
     if (app_lang== "python"){
-        sh 'python -m unittest'
+        sh 'python3 -m unittest'
     }
 }
