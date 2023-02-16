@@ -1,5 +1,10 @@
 def call(){
     node(){
+        stage('chekout'){
+            cleanWs()
+            git branch: 'main', url: 'https://github.com/Dimpulsunayana/cart.git'
+        }
+
         stage('compile/Build'){
             common.compile()
         }
