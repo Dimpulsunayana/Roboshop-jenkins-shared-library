@@ -2,7 +2,7 @@ def call(){
     node(){
         stage('chekout'){
             cleanWs()
-            git branch: 'main', url: 'https://github.com/Dimpulsunayana/cart.git'
+            git branch: 'main', url: 'https://github.com/Dimpulsunayana/${component}.git'
         }
 
         stage('compile/Build'){
