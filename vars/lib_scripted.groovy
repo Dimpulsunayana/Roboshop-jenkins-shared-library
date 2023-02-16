@@ -1,5 +1,5 @@
 def call(){
-    node(){
+    node('dimpul'){
         stage('chekout'){
             cleanWs()
             git branch: 'main', url: "https://github.com/Dimpulsunayana/${component}.git"
