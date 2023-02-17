@@ -39,7 +39,7 @@ def call(){
                     echo 'upload'
                    //common.artifactPush()
     }
-}
+//}
         }
         }catch (Exception e) {
             common.email("Failed")
