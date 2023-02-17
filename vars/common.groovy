@@ -34,7 +34,7 @@ def email(email_note){
             replyTo: '', subject: "${JOB_BASE_NAME} Unit test failed in jenkins", to: 'dimpulsunayana205@gmail.com'
 }
 
-def artifactpush(){
+def artifactPush(){
     if (app_lang== "nodejs"){
     sh "zip -r ${component}-${TAG_NAME}.zip node_modules server.js"
     sh 'ls -l'
