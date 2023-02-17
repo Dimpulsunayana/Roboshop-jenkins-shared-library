@@ -23,6 +23,11 @@ def call(){
                 common.unittests()
             }
 
+            stage('dimpul') {
+                echo 'upload'
+                common.artifactPush()
+            }
+
             stage('Quality Control') {
                 Sonar_User = '$(aws ssm get-parameters --region us-east-1 --names sonarqube.user --with-decryption ' +
                         '--query Parameters[0].Value | sed \'s/"//g\')'
