@@ -34,13 +34,13 @@ def call(){
                             "-Dsonar.login=${Sonar_User} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true ${SONAR_EXTRA_OPTS}"
                 }
             }
-if (env.PUSH_CODE == "true") {
-    stage('upload code to centralized place') {
-        common.artifactpush()
+            if (env.PUSH_CODE == "true") {
+                stage('upload code to centralized place') {
+                    common.artifactpush()
     }
 }
         }
-    }catch (Exception e) {
+        }catch (Exception e) {
             common.email("Failed")
         }
 }
