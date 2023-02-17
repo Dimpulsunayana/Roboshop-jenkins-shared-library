@@ -34,9 +34,10 @@ def call(){
                             "-Dsonar.login=${Sonar_User} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true ${SONAR_EXTRA_OPTS}"
                 }
             }
-            if (env.PUSH_CODE == "true") {
+            if(env.PUSH_CODE == "true") {
                 stage('upload code to centralized place') {
-                    common.artifactPush()
+                    echo 'upload'
+                   // common.artifactPush()
     }
 }
         }
