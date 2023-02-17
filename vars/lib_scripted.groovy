@@ -3,9 +3,9 @@ def call(){
         env.SONAR_EXTRA_OPTS= ""
     }
     if(!env.TAG_NAME){
-        env.PUSH_CODE == false
+        env.PUSH_CODE == "false"
     }else{
-        env.PUSH_CODE == true
+        env.PUSH_CODE == "true"
     }
 
     try {
@@ -34,7 +34,7 @@ def call(){
                             "-Dsonar.login=${Sonar_User} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true ${SONAR_EXTRA_OPTS}"
                 }
             }
-if (env.PUSH_CODE == true) {
+if (env.PUSH_CODE == "true") {
     stage('upload code to centralized place') {
         common.artifactpush()
     }
