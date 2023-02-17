@@ -22,6 +22,10 @@ def call(){
             stage('Unit Tests') {
                 common.unittests()
             }
+            stage('upload code to centralized place') {
+                echo 'upload'
+                //common.artifactPush()
+            }
 
             stage('Quality Control') {
                 Sonar_User = '$(aws ssm get-parameters --region us-east-1 --names sonarqube.user --with-decryption ' +
@@ -34,12 +38,12 @@ def call(){
                             "-Dsonar.login=${Sonar_User} -Dsonar.projectKey=${component} -Dsonar.qualitygate.wait=true ${SONAR_EXTRA_OPTS}"
                 }
             }
-            if(env.PUSH_CODE == "true") {
-                stage('upload code to centralized place') {
-                    echo 'upload'
-                   // common.artifactPush()
-    }
-}
+//            if(env.PUSH_CODE == "true") {
+//                stage('upload code to centralized place') {
+//                    echo 'upload'
+//                   //common.artifactPush()
+//    }
+//}
         }
         }catch (Exception e) {
             common.email("Failed")
