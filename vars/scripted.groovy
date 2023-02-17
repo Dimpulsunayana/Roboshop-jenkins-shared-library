@@ -25,7 +25,7 @@ def call(){
 
             stage('dimpul') {
                 echo 'upload'
-                common.artifactPush()
+               // common.artifactPush()
             }
 
             stage('Quality Control') {
