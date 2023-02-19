@@ -4,7 +4,7 @@ def compile(){
     }
 
     if (app_lang== "maven"){
-        sh 'mvn package'
+        sh 'mvn package && cp target/${component}-1.0.jar ${component}'
     }
 }
 
@@ -41,6 +41,11 @@ def artifactPush(){
     if (app_lang== "nginx" || app_lang== "python"){
         sh "zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile"
     }
+
+    if (app_lang== "maven"){
+        sh "zip -r ${component}-${TAG_NAME}.zip VERSION ${component}.jar"
+    }
+
     sh 'ls -l'
     sh "curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip http://172.31.12.68:8081/repository/${component}/${component}-${TAG_NAME}.zip"
 
