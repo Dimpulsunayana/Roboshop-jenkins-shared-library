@@ -8,6 +8,10 @@ def call(){
         env.PUSH_CODE = "true"
     }
 
+    if(!env.extrafiles){
+        env.extrafiles=""
+    }
+
     try {
         node('dimpul') {
             stage('chekout') {
