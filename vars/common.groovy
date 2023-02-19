@@ -34,16 +34,17 @@ def email(email_note){
             replyTo: '', subject: "${JOB_BASE_NAME} Unit test failed in jenkins", to: 'dimpulsunayana205@gmail.com'
 }
 def artifactPush(){
+    sh "echo ${TAG_NAME} >VERSION"
     if (app_lang== "nodejs"){
     sh "zip -r ${component}-${TAG_NAME}.zip node_modules server.js VERSION ${extrafiles}"
 }
 
     if (app_lang== "nginx" || app_lang== "python"){
-        sh "zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile"
+        sh "zip -r ${component}-${TAG_NAME}.zip * -x Jenkinsfile ${extrafiles}"
     }
 
     if (app_lang== "maven"){
-        sh "zip -r ${component}-${TAG_NAME}.zip VERSION ${component}.jar"
+        sh "zip -r ${component}-${TAG_NAME}.zip VERSION ${component}.jar ${extrafiles}"
     }
 
     sh 'ls -l'
