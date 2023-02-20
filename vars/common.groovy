@@ -44,7 +44,7 @@ def artifactPush(){
     }
 
     if (app_lang== "maven"){
-        sh "zip -r ${component}-${TAG_NAME}.zip VERSION ${component}.jar ${extrafiles}"
+        sh "zip -r ${component}-${TAG_NAME}.zip * VERSION ${component}.jar ${extrafiles}"
     }
 
     sh 'ls -l'
