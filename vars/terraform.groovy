@@ -26,11 +26,10 @@ def call(){
                     sh "terraform apply -var-file=env-${Infra_env}/main.tfvars"
                 }
             }
-
-            post {
-                always {
-                    cleanWs()
-                }
+        }
+        post {
+            always {
+                cleanWs()
             }
         }
     }
