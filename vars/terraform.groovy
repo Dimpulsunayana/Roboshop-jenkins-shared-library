@@ -15,7 +15,9 @@ def call(){
 
         stages{
             stage('clean workspace') {
-                cleanWs()
+                steps{
+                    cleanWs()
+                }
             }
 
             stage('Terraform init'){
