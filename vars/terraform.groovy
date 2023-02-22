@@ -14,11 +14,6 @@ def call(){
         }
 
         stages{
-            stage('clean workspace') {
-                steps{
-                    cleanWs()
-                }
-            }
 
             stage('Terraform init'){
                 steps{
@@ -29,6 +24,12 @@ def call(){
             stage('Terraform apply'){
                 steps{
                     sh "terraform apply -var-file=env-${Infra_env}/main.tfvars"
+                }
+            }
+
+            post {
+                always {
+                    cleanWs()
                 }
             }
         }
