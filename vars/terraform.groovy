@@ -11,6 +11,7 @@ def call(){
 
         parameters {
             choice(name: 'Infra_env', choices: ['dev', 'prod'], description: 'Pick the env')
+            choice(name: 'Action', choices: ['apply', 'destroy'], description: 'Pick the action')
         }
 
         stages{
@@ -23,7 +24,7 @@ def call(){
 
             stage('Terraform apply'){
                 steps{
-                    sh "terraform apply --auto-approve -var-file=env-${Infra_env}/main.tfvars"
+                    sh "terraform ${ACTION} --auto-approve -var-file=env-${Infra_env}/main.tfvars"
                 }
             }
         }
